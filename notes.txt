@@ -1,0 +1,30 @@
+Issues: 
+see Issues.PNG image for CORS error.. I added a plug in but this needs to be sorted.. 
+Database issue, When field was VARCHAR the Spring jpa would't work until field was set to TEXT...
+
+SQL (Setup): 
+
+Get the SQL-Tools folder
+run in command prompt: Sqlite3 <db_name> (this will create it in the tools directory.)
+
+////////// application.properties (For sqlite3) //////////////////////
+spring.jpa.database-platform=org.hibernate.dialect.SQLiteDialect
+sping.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+
+spring.datasource.url=jdbc:sqlite:objective.db
+spring.datasource.password=
+spring.datasource.username=
+spring.datasource.driver-class-name=org.sqlite.JDBC
+/////////////////////////////////////////////////////////////////////
+
+
+Since changed to Postgres to allow for username/password 
+
+important postgres commends
+CREATE DATABASE objective; \\ create database called objective 
+\l \\ to list databases
+\c objective \\ connect to database 'objective'
+
+Use the jasypt Jar: Download the jasypt jar file from the maven repository and run it through the following command:
+java -cp //jasypt-1.9.3/lib/jasypt-1.9.3.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI input=”xyz123″ password=secretkey algorithm=PBEWithMD5AndDES

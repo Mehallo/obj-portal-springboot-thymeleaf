@@ -1,0 +1,155 @@
+CREATE TABLE
+    documents
+    (
+        id varchar(255) NOT NULL,
+        name varchar(255),
+        assigned_privileges varchar(2000),
+	date_delete varchar(255),
+        PRIMARY KEY (id)
+    );
+
+CREATE TABLE
+    folders
+    (
+        id varchar(255) NOT NULL,
+        name varchar(255),
+        assigned_privileges varchar(2000),
+	date_delete varchar(255),
+        PRIMARY KEY (id)
+    );
+
+CREATE TABLE
+    groups
+    (
+        id varchar(255) NOT NULL,
+        name varchar(255),
+	date_delete varchar(255),
+	date_inactivate varchar(255),
+        PRIMARY KEY (id)
+    );
+
+INSERT INTO documents (id, name, assigned_privileges, date_delete)
+  VALUES ('A1','Hello World','YYYYNNNgA1/','2016-01-01 10:20:05.123');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A2','Joe Bloggs','YYYYNNNgA2/');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A3','Kittens R Us','YYYYNNNgA2/');
+
+INSERT INTO documents (id, name, assigned_privileges, date_delete)
+  VALUES ('A4','Testing1','YYYYNNNgA1/','2016-01-01 10:20:05.123');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A5','Testing2','YYYYNNNgA2/');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A6','Testing3','YYYYNNNgA2/');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A7','Testing4','YYYYNNNgA2/');
+
+INSERT INTO documents (id, name, assigned_privileges)
+  VALUES ('A8','Testing5','YYYYNNNgA2/');
+
+
+INSERT INTO folders (id, name, assigned_privileges, date_delete)
+  VALUES ('fA1','Hello World','YYYYNNNgA3/','2017-01-01 10:20:05.123');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('fA2','Joe Bloggs','YYYYNNNgA3/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('fA3','Kittens R Us','YYYYNNNgA4/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('fA4','Folder4','YYYYNNNgA2/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('fA5','Folder5','YYYYNNNgA2/');
+
+INSERT INTO folders (id, name, assigned_privileges, date_delete)
+  VALUES ('qA1','Hello World','YYYYNNNgA3/', '2018-01-01 10:20:05.123');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('qA2','Joe Bloggs','YYYYNNNgA3/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('qA3','Kittens R Us','YYYYNNNgA4/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('qA4','File4','YYYYNNNgA2/');
+
+INSERT INTO folders (id, name, assigned_privileges)
+  VALUES ('qA5','File5','YYYYNNNgA2/');
+
+
+
+INSERT INTO groups (id, name)
+  VALUES ('gA1','ORG_BIS');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA2','ORG_BIS_ADS');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA3','ORG_BIS_ADS_SM');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA4','ORG_BIS_ADS_DEV');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA5','ORG_BIS_ADS_SYSADM');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA6','ORG_BIS_EXEC');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA7','ORG_BIS_DIV');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA8','ORG_BIS_DM');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA9','ORG_BIS_PROJ');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA10','MP_PLEBS');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA11','MP_MANAGEMENT');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA12','MP_ALL');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA13','MP_BUC_ADS');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA14','MP_BUC_DM');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA15','MP_BUC_PROJ');
+
+INSERT INTO groups (id, name)
+  VALUES ('gA16','MP_BUC_ADS');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA17','MP_BUC_HELLOWORLD','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA18','MP_BUC_GROUP1','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA19','MP_BUC_GROUP2','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA20','MP_BUC_GROUP3','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA21','MP_BUC_GROUP4','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+INSERT INTO groups (id, name, date_delete, date_inactivate)
+  VALUES ('gA22','MP_BUC_GROUP5','2016-01-01 10:20:05.123','2016-01-01 10:20:05.123');
+
+
+
