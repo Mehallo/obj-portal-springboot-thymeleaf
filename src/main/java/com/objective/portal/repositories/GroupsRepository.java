@@ -21,4 +21,7 @@ public interface GroupsRepository extends JpaRepository<Groups, Long> {
 
     Page<Groups> findByDateinactivateIsNull(Pageable pagesable);
 
+    Page<Groups> findByDateinactivateIsNullAndNameContaining(String groupName, Pageable pagesable);
+
+
 }

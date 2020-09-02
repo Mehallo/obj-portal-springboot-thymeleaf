@@ -1,9 +1,12 @@
 package com.objective.portal.repositories;
 
 import com.objective.portal.models.Documents;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+
 import java.util.List;
 
 public interface DocumentsRepository extends CrudRepository<Documents, Long> {
@@ -21,5 +24,7 @@ public interface DocumentsRepository extends CrudRepository<Documents, Long> {
     List<Documents> findByName(String name);
 
     List<Documents> findByDatedeleteIsNullAndPrivilegesContaining(String privileges);
+
+    Page<Documents> findByDatedeleteIsNullAndPrivilegesContaining(String privileges, Pageable pageable);
 
 }
