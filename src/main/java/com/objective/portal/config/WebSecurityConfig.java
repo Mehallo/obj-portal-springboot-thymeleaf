@@ -13,31 +13,31 @@ import org.springframework.web.servlet.i18n.LocaleChangeInterceptor;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import java.util.Locale;
 
-@Configuration
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Configuration
+    public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http
-                .cors().and().csrf().disable()
-                .authorizeRequests()
-                .anyRequest().fullyAuthenticated()
-                .and()
-                .formLogin();
-    }
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http
+                    .cors().and().csrf().disable()
+                    .authorizeRequests().antMatchers("/*").permitAll();
+                    //.anyRequest().fullyAuthenticated()
+                    //.and()
+                    //.formLogin();
+        }
 
-    @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .ldapAuthentication()
-                .userDnPatterns("uid={0},ou=people")
-                .groupSearchBase("ou=groups")
-                .contextSource()
-                .url("ldap://localhost:8389/dc=springframework,dc=org")
-                .and()
-                .passwordCompare()
-                .passwordEncoder(new BCryptPasswordEncoder())
-                .passwordAttribute("userPassword");
-    }
-
+        /*@Override
+        public void configure(AuthenticationManagerBuilder auth) throws Exception {
+            auth
+                    .ldapAuthentication()
+                    .userDnPatterns("uid={0},ou=people")
+                    .groupSearchBase("ou=groups")
+                    .contextSource()
+                    .url("ldap://localhost:8389/dc=springframework,dc=org")
+                    .and()
+                    .passwordCompare()
+                    .passwordEncoder(new BCryptPasswordEncoder())
+                    .passwordAttribute("userPassword");
+        }*/
 }
+

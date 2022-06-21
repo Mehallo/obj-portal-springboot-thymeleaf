@@ -33,7 +33,7 @@
     <ul class='nav nav-pills'>
         <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
         <li class="nav-item"><a class='nav-link' href="/api/v1/groups/page/1">Group Check</a></li>
-        <li class="nav-item"><a class='nav-link active' href="/api/v1/add/menu">Add Group</a></li>
+        <!--<li class="nav-item"><a class='nav-link active' href="/api/v1/add/menu">Add Groups</a></li>-->
         <li class="nav-item"><a class='nav-link' href="/api/v1/help">Help</a></li>
     </ul>
 </nav>
@@ -44,24 +44,26 @@
     </div>
     <div class="card-body">
         <div class="container-fluid">
-            <div class="text-left">
-                <p> Upload your Spreadsheet </p>
-                <p><-- Insert image example to demostrate the format of the input file --> </p>
-                <!-- <input type="file" class="form-control-file" id="fileToUpload" name="filename"> -->
-                <!-- /api/v1/add/updateBulk -->
-                    <form method="POST" action="/api/v1/add/updateBulk" enctype="multipart/form-data">
-                        <input type="file" name="file" id="fileItem" /> <br/>
-                        <input type="Submit" value="Upload" name="upload" id="upload" />
-                    </form>
-                <!-- <button class='btn btn-outline-secondary' th:onclick="uploadFileToServer()">
-                    Upload
-                </button>-->
-                <!--<button class='btn btn-outline-secondary' id="submit">
-                    Submit
-                </button> -->
+            <div class="row">
+                <div class='col-md-12'>
+                    <p> Upload your Spreadsheet </p>
+                </div>
             </div>
-
-        </div>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <!-- <input type="file" class="form-control-file" id="fileToUpload" name="filename"> -->
+                    <!-- /api/v1/add/updateBulk -->
+                    <form method="POST" action="/api/v1/add/updateBulk" enctype="multipart/form-data">
+                        <input type="file" name="file" id="fileItem" class="form-control-file"/> </br>
+                        <input type="Submit" value="Upload" name="upload" id="upload" class='btn btn-outline-secondary'/>
+                    </form>
+                </div>
+                <div class='col-md-6'>
+                    <i>Example of format (Object Id, group Id/User ID, privileges to be added</i>
+                    <img src="/images/addPrivExample.PNG"
+                        class="img-responsive center-block"/>
+                </div>
+            </div>
     </div>
 </div>
 
